@@ -1,6 +1,6 @@
 # cms-ars-3.1-low-microsoft-sql-server-2017-cis-overlay
 
-An InSpec Profile Overlay to validate the secure configuration of Microsoft SQL Server 2017 (Express Edition) against [CIS](https://www.cisecurity.org/cis-benchmarks/)'s Benchmark for Microsoft SQL Server 2017 version 1.2.0 tailored for CMS ARS 3.1 for CMS systems categorized as Moderate.
+An InSpec Profile Overlay to validate the secure configuration of AWS RDS instance of Microsoft SQL Server 2017 (Express Edition) against [CIS](https://www.cisecurity.org/cis-benchmarks/)'s Benchmark for Microsoft SQL Server 2017 version 1.2.0 tailored for CMS ARS 3.1 for CMS systems categorized as Moderate.
 
 ## Getting Started  
 
@@ -47,7 +47,7 @@ encryption_disabled_dbs: []
 
 ```
 # How to run
-inspec exec https://github.com/CMSgov/cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay/archive/master.tar.gz -t winrm://<hostip> --user=<admin-account> --password=<password> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec https://github.com/CMSgov/cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay/archive/master.tar.gz --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 ### Different Run Options
@@ -67,7 +67,7 @@ mkdir profiles
 cd profiles
 git clone https://github.com/CMSgov/cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay
 inspec archive cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay
-inspec exec <name of generated archive> -t winrm://<hostip> --user=<admin-account> --password=<password> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec <name of generated archive> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 For every successive run, follow these steps to always have the latest version of this baseline:
 
@@ -76,7 +76,7 @@ cd cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay
 git pull
 cd ..
 inspec archive cms-ars-3.1-moderate-aws-rds-microsoft-sql-server-2017-cis-overlay --overwrite
-inspec exec <name of generated archive> -t winrm://<hostip> --user=<admin-account> --password=<password> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec <name of generated archive> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 ## Viewing the JSON Results
